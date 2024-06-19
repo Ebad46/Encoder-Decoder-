@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const int MAX_ENTRIES = 100; // Maximum number of entries in the database
+const int MAX_ENTRIES = 2; // Maximum number of entries in the database
 
 // Function to encrypt/decrypt data using XOR with a key
 string xorEncryptDecrypt(const string& data, char key) {
@@ -68,8 +68,8 @@ int main() {
                 cout << "Database is full. Cannot add more data.\n";
                 cout << "Press Enter to continue...";
                 cin.get(); 
-            }
-            cout << "\nEnter data to input: ";
+            }else{
+			cout << "\nEnter data to input: ";
             string data;
             getline(cin, data);
             cout << "Enter a single character key for encryption: ";
@@ -82,8 +82,8 @@ int main() {
             entry_count++;
             cout << "Data has been encrypted and stored.\n";
             cout << "Press Enter to continue...";
-            cin.get(); 
-        } else if (choice == 2) {
+            cin.get(); }
+		} else if (choice == 2) {
             if (entry_count == 0) {
                 clearScreen();
                 cout << "Database is empty.\n";
